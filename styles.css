@@ -1,0 +1,260 @@
+/* =========================================================
+   Andy Talbert — Portfolio
+   Theme: night chart plotter — deep bay navy, brass + tide teal
+   ========================================================= */
+
+:root {
+  /* --- Palette --- */
+  --bg:        #0a1929;
+  --bg-alt:    #0d1f30;
+  --panel:     #11283c;
+  --panel-hi:  #16324a;
+  --line:      #1e3a52;
+  --text:      #e8eef2;
+  --muted:     #8fa3b3;
+  --muted-dim: #5f7688;
+  --brass:     #d9a648;
+  --brass-dim: #8a6c37;
+  --teal:      #3fa9a0;
+  --teal-dim:  #2a6e68;
+
+  /* --- Type --- */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* --- Layout --- */
+  --wrap: 1080px;
+  --radius: 10px;
+  --gap: 1.25rem;
+}
+
+/* --- Reset --- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+p { margin: 0; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* --- Background chart grid (signature texture) --- */
+.chart-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 90%);
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero {
+  position: relative;
+  padding: 3.5rem 0 4rem;
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  margin: 0 0 0.85rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.tagline {
+  margin-top: 0.9rem;
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--brass);
+  border: 1px solid var(--brass-dim);
+  border-radius: 999px;
+  padding: 0.32rem 0.7rem;
+  white-space: nowrap;
+}
+
+.tide-line {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin-top: 2.5rem;
+}
+.tide-line path {
+  fill: none;
+  stroke: var(--teal-dim);
+  stroke-width: 2;
+}
+
+/* =========================================================
+   Groups / Cards
+   ========================================================= */
+.group {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.group:first-of-type { border-top: none; }
+
+.group-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 1.25rem;
+}
+
+.depth {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted-dim);
+}
+
+.group-head h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.group-sub {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.3rem;
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--teal-dim);
+  background: var(--panel-hi);
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brass);
+}
+
+.status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted-dim);
+  flex-shrink: 0;
+}
+.status.up   { background: var(--teal); box-shadow: 0 0 0 3px rgba(63,169,160,0.15); }
+.status.down { background: #c9634f; box-shadow: 0 0 0 3px rgba(201,99,79,0.15); }
+
+.card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.card .url {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted-dim);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0 3rem;
+}
+.site-footer p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted-dim);
+}
+
+/* =========================================================
+   Responsive — scale up from mobile baseline
+   ========================================================= */
+@media (min-width: 560px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 860px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero { padding: 5rem 0 5.5rem; }
+}

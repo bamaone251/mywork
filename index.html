@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andy Talbert — Builds &amp; Tools</title>
+<meta name="description" content="Self-hosted weather, tide, fishing, and operations tools for Mobile Bay and Lower Alabama, built by Andy Talbert.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="chart-grid" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">30.5165° N &nbsp;/&nbsp; 87.9033° W &nbsp;— &nbsp;Fairhope, AL</p>
+      <h1>Andy Talbert</h1>
+      <p class="tagline">Warehouse ops by day. I build small, fast tools for the coast — tides, weather, boats, and the systems that keep a distribution center running.</p>
+      <div class="hero-meta">
+        <span class="chip">Mobile Bay, AL</span>
+        <span class="chip">ALDI Gulf Coast Division</span>
+        <span class="chip">Self&#8209;hosted on a VPS</span>
+      </div>
+    </div>
+    <svg class="tide-line" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,30 C 100,5 200,55 300,30 C 400,5 500,55 600,30 C 700,5 800,55 900,30 C 1000,5 1100,55 1200,30" />
+    </svg>
+  </header>
+
+  <main class="wrap">
+
+    <section class="group" aria-labelledby="wx-heading">
+      <div class="group-head">
+        <span class="depth">01</span>
+        <h2 id="wx-heading">Weather &amp; Tides</h2>
+        <p class="group-sub">Live coastal data for Mobile Bay and Lower Alabama</p>
+      </div>
+      <div class="card-grid">
+
+        <a class="card" href="https://wx.andytalbert.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">weather</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>Weather Hub</h3>
+          <p>Unified forecast dashboard for the coast, pulling live data from Open&#8209;Meteo.</p>
+          <span class="url">wx.andytalbert.com</span>
+        </a>
+
+        <a class="card" href="https://tides.andytalbert.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">tides</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>2026 Tide Calendar</h3>
+          <p>Alabama tide calendar built on NOAA CO&#8209;OPS station data.</p>
+          <span class="url">tides.andytalbert.com</span>
+        </a>
+
+        <a class="card" href="https://sats.andytalbert.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">satellite</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>GOES Satellite Viewer</h3>
+          <p>Sector&#8209;switching GOES imagery viewer with per&#8209;sector caching, dark UI, mobile first.</p>
+          <span class="url">sats.andytalbert.com</span>
+        </a>
+
+        <a class="card" href="https://bamaone251.github.io/LABwx/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">weather</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>LABwx</h3>
+          <p>Lower Alabama weather companion site for the Lower Alabama Living community.</p>
+          <span class="url">bamaone251.github.io/LABwx</span>
+        </a>
+
+        <a class="card" href="https://bamaone251.github.io/LABwx/tides.html" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">tides</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>LABwx — Tides</h3>
+          <p>Tide charts for the Lower Alabama coast, companion page to LABwx.</p>
+          <span class="url">bamaone251.github.io/LABwx/tides.html</span>
+        </a>
+
+        <a class="card" href="https://bamaone251.github.io/LABwx/tracking.html" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">vessel tracking</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>LABwx — Tracking</h3>
+          <p>Vessel and traffic tracking companion page for the Lower Alabama coast.</p>
+          <span class="url">bamaone251.github.io/LABwx/tracking.html</span>
+        </a>
+
+        <a class="card" href="https://bamaone251.github.io/battle/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">Civil War History</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>THE LAST CAMPAIGN</h3>
+          <p>The Battles of Mobile Bay · Spanish Fort · Fort Blakeley</p>
+          <span class="url">bamaone251.github.io/battle/</span>
+        </a>
+
+        <a class="card" href="https://bamaone251.github.io/battlemap/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">Civil War History</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>BATTLE MAP</h3>
+          <p>Damn the Torpedoes, Full speed ahead!</p>
+          <span class="url">bamaone251.github.io/battlemap/</span>
+        </a>
+
+
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="fishing-heading">
+      <div class="group-head">
+        <span class="depth">02</span>
+        <h2 id="fishing-heading">Fishing &amp; Boating</h2>
+        <p class="group-sub">Solunar, tide, and trip planning for Mobile Bay</p>
+      </div>
+      <div class="card-grid">
+
+        <a class="card" href="https://fishing.andytalbert.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">fishing</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>Mobile Bay Fishing</h3>
+          <p>Tides, solunar windows, and conditions for planning a day on the water.</p>
+          <span class="url">fishing.andytalbert.com</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="ops-heading">
+      <div class="group-head">
+        <span class="depth">03</span>
+        <h2 id="ops-heading">Warehouse Operations</h2>
+        <p class="group-sub">Internal tools for ALDI Gulf Coast Division warehouse work</p>
+      </div>
+      <div class="card-grid">
+
+        <a class="card" href="https://superdash.loxload.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">dashboard</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>SuperDash</h3>
+          <p>Live operations dashboard for the load desk floor.</p>
+          <span class="url">superdash.loxload.com</span>
+        </a>
+
+        <a class="card" href="https://comms.loxload.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">call log</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>Load Desk Comms</h3>
+          <p>Call log app with inline notes and Excel export for the load desk.</p>
+          <span class="url">comms.loxload.com</span>
+        </a>
+
+        <a class="card" href="https://tracker.loxload.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">equipment</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>Equipment Tracker</h3>
+          <p>Photo&#8209;scan warehouse equipment tracker with live sync and Excel export.</p>
+          <span class="url">tracker.loxload.com</span>
+        </a>
+
+        <a class="card" href="https://equipment.loxload.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">returns</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>Equipment Returns</h3>
+          <p>Returns and equipment request handling for the Gulf Coast Division.</p>
+          <span class="url">equipment.loxload.com</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="site-heading">
+      <div class="group-head">
+        <span class="depth">04</span>
+        <h2 id="site-heading">Home Base</h2>
+        <p class="group-sub">Main sites</p>
+      </div>
+      <div class="card-grid">
+
+        <a class="card" href="https://andytalbert.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">home</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>andytalbert.com</h3>
+          <p>Main personal site.</p>
+          <span class="url">andytalbert.com</span>
+        </a>
+
+        <a class="card" href="https://portfolio.andytalbert.com/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="tag">portfolio</span>
+            <span class="status" data-status></span>
+          </div>
+          <h3>Portfolio</h3>
+          <p>This page — a running log of what's been built.</p>
+          <span class="url">portfolio.andytalbert.com</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Built and hosted on a personal VPS behind nginx &mdash; Fairhope, Alabama.</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
